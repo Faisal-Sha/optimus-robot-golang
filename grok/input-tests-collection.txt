@@ -1,0 +1,73 @@
+# Test Case 1: Basic direction modifiers
+# Expected: SOUTH, EAST, NORTH, EAST, EAST
+5 6
+######
+#@E $#
+# N  #
+#X   #
+######
+
+# Test Case 2: Complex path with direction modifiers
+# Expected: SOUTH, SOUTH, EAST, EAST, EAST, EAST, EAST, EAST, NORTH, NORTH, NORTH, NORTH, NORTH, NORTH, WEST, WEST, WEST, WEST, SOUTH, SOUTH
+10 10
+##########
+#        #
+#  S   W #
+#        #
+#  $     #
+#        #
+#@       #
+#        #
+#E     N #
+##########
+
+# Test Case 3: Breaker mode with destructible walls
+# Expected: SOUTH, SOUTH, SOUTH, SOUTH, EAST, EAST, EAST, EAST, EAST, EAST
+10 10
+##########
+# @      #
+# B      #
+#XXX     #
+# B      #
+#    BXX$#
+#XXXXXXXX#
+#        #
+#        #
+##########
+
+# Test Case 4: Inverters changing direction priorities
+# Expected: SOUTH, SOUTH, SOUTH, SOUTH, WEST, WEST, WEST, WEST, WEST, WEST, WEST, NORTH, NORTH, NORTH, NORTH, NORTH, NORTH, NORTH, EAST, EAST, EAST, EAST, EAST, EAST, EAST, SOUTH, SOUTH
+10 10
+##########
+#    I   #
+#        #
+#       $#
+#       @#
+#        #
+#       I#
+#        #
+#        #
+##########
+
+# Test Case 5: Teleporters
+# Expected: SOUTH, SOUTH, SOUTH, EAST, EAST, EAST, EAST, EAST, EAST, EAST, SOUTH, SOUTH, SOUTH, SOUTH, SOUTH, SOUTH, SOUTH
+10 10
+##########
+#    1   #
+#        #
+#        #
+#        #
+#@       #
+#        #
+#        #
+#    1  $#
+##########
+
+# Test Case 6: Impossible case - should output LOOP
+# Expected: LOOP
+5 5
+#####
+#   #
+# $ #
+# @ #
+#####
